@@ -197,6 +197,21 @@ textarea.csv{width:100%;height:230px;font-family:ui-monospace,Menlo,monospace;fo
   .iv .type{display:none}
 }
 
+/* ---------- Profile ---------- */
+.profile{max-width:980px}
+.profile-card{margin-bottom:22px}
+.profile-head{display:flex;align-items:center;gap:16px}
+.profile-head h3{font-size:20px;margin:0}
+.profile-head p{margin:2px 0 0}
+.avatar.lg{width:56px;height:56px;font-size:22px;font-family:var(--display)}
+.profile-row{grid-template-columns:1fr 1fr}
+.stack{display:flex;flex-direction:column;gap:14px}
+.danger-zone{border-color:color-mix(in srgb,var(--red) 35%,var(--line))}
+.danger-zone h3{color:var(--red)}
+.delete-confirm{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.delete-confirm label{flex:1;min-width:220px}
+@media (max-width:1000px){.profile-row{grid-template-columns:1fr}}
+
 /* ---------- App extras ---------- */
 .nav{display:flex;flex-direction:column;gap:4px}
 .chip-n{opacity:.6;margin-left:2px}

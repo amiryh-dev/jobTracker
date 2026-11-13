@@ -4,13 +4,14 @@ import { useAuth } from '../context/AuthContext.jsx';
 import { useJobs } from '../context/JobsContext.jsx';
 import { daysFrom } from '../lib/helpers.js';
 import JobForm from './JobForm.jsx';
-import { BoardIcon, CalendarIcon, DashboardIcon, ListIcon, Logo, SearchIcon } from './Icons.jsx';
+import { BoardIcon, CalendarIcon, DashboardIcon, ListIcon, Logo, SearchIcon, UserIcon } from './Icons.jsx';
 
 const PAGES = {
   '/': { title: 'Dashboard' },
   '/applications': { title: 'Applications' },
   '/board': { title: 'Board', sub: 'Drag a card to change its status' },
   '/interviews': { title: 'Interviews', sub: 'Every interview date you have added' },
+  '/profile': { title: 'Profile', sub: 'Manage your account details and password' },
 };
 
 export default function Layout() {
@@ -50,6 +51,7 @@ export default function Layout() {
             <CalendarIcon /><span>Interviews</span>
             {upcoming > 0 && <span className="badge">{upcoming}</span>}
           </NavLink>
+          <NavLink to="/profile"><UserIcon /><span>Profile</span></NavLink>
         </nav>
         <div className="spacer" />
         <button className="theme" onClick={() => setDark((d) => !d)}>{dark ? 'Light mode' : 'Dark mode'}</button>
@@ -69,11 +71,15 @@ export default function Layout() {
             <h1>{page.title}</h1>
             <p>{subtitle}</p>
           </div>
-          <label className="searchbox" aria-label="Search">
-            <SearchIcon />
-            <input value={search} onChange={onSearch} placeholder="Search company or role" />
-          </label>
-          <button className="btn primary" onClick={() => setEditing({})}>Add application</button>
+          {location.pathname !== '/profile' && (
+            <>
+              <label className="searchbox" aria-label="Search">
+                <SearchIcon />
+                <input value={search} onChange={onSearch} placeholder="Search company or role" />
+              </label>
+              <button className="btn primary" onClick={() => setEditing({})}>Add application</button>
+            </>
+          )}
         </div>
 
         {loading ? (

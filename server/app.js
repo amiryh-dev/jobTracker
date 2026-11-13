@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { connectDB } from './db.js';
 import authRoutes from './routes/auth.js';
 import jobRoutes from './routes/jobs.js';
+import userRoutes from './routes/users.js';
 
 const app = express();
 app.use(express.json({ limit: '100kb' }));
@@ -22,6 +23,7 @@ app.use('/api', async (req, res, next) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/users', userRoutes);
 
 app.use('/api', (req, res) => res.status(404).json({ message: 'Route not found.' }));
 

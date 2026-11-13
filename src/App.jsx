@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import Applications from './pages/Applications.jsx';
 import Board from './pages/Board.jsx';
 import Interviews from './pages/Interviews.jsx';
+import Profile from './pages/Profile.jsx';
 
 function RequireAuth({ children }) {
   const { user, loading } = useAuth();
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="applications" element={<Applications />} />
         <Route path="board" element={<Board />} />
         <Route path="interviews" element={<Interviews />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
