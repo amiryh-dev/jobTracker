@@ -5,6 +5,14 @@ body.dark { color-scheme: dark; }
 .row > *, .form-grid > *, .iv > * { min-width: 0; }
 .modal input, .modal select, .modal textarea, .auth-card input { min-width: 0; max-width: 100%; }
 
+/* Small visual refinements shared by light and dark themes. */
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex="0"]:focus-visible {
+  outline: 2px solid var(--teal, #0e7c74);
+  outline-offset: 3px;
+}
+.iv .date { font-variant-numeric: tabular-nums; }
+
 @media (max-width: 760px) {
   .app { grid-template-columns: minmax(0, 1fr); }
   .side { flex-wrap: wrap; padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px)); }
