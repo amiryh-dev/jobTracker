@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { api, getToken, setToken } from '../api.js';
 
 const AuthContext = createContext(null);
@@ -30,10 +30,11 @@ export function AuthProvider({ children }) {
   const signUp = async (name, email, password) =>
     handleAuth(await api('/auth/signup', { method: 'POST', body: { name, email, password } }));
 
-  const signOut = () => {
+  // JobsProvider depends on this callback when loading applications.
+  const signOut = useCallback(() => {
     setToken(null);
     setUser(null);
-  };
+  }, []);
 
   // PUT /api/users/me — returns the updated user
   const updateProfile = async (changes) => {
