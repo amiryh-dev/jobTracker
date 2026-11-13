@@ -12,11 +12,12 @@ export default function Interviews() {
 
   const Item = ({ j }) => {
     const d = daysFrom(j.interviewDate);
+    const unit = Math.abs(d) === 1 ? 'day' : 'days';
     return (
       <div className="iv" tabIndex={0} onClick={() => setEditing(j)} onKeyDown={(e) => e.key === 'Enter' && setEditing(j)}>
         <div className="date">
           <b>{fmtDate(j.interviewDate)}</b>
-          <span>{d === 0 ? 'Today' : d > 0 ? `In ${d} days` : `${-d} days ago`}</span>
+          <span>{d === 0 ? 'Today' : d > 0 ? `In ${d} ${unit}` : `${-d} ${unit} ago`}</span>
         </div>
         <CompanyCell job={j} />
         {j.interviewType ? <span className="type">{j.interviewType}</span> : <span />}
