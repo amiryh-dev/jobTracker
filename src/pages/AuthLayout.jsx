@@ -23,6 +23,7 @@ export default function AuthLayout({ children }) {
             ))}
           </div>
         </div>
+        <p className="auth-team">Built by Team Next Step · COMP229</p>
       </aside>
       <main className="auth-form">{children}</main>
     </div>

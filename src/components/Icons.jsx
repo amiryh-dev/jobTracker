@@ -18,10 +18,13 @@ export const CalendarIcon = () => (
 export const SearchIcon = () => (
   <svg {...base} strokeWidth={2.2}><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
 );
+// Team Next Step logo mark: three rising steps with an arrow (drawn for dark backgrounds)
 export const Logo = ({ size = 26 }) => (
-  <svg width={size} height={size} viewBox="0 0 26 26" aria-hidden="true">
-    <rect x="1" y="7" width="24" height="17" rx="4" fill="#3fb6aa" />
-    <path d="M9 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="#3fb6aa" strokeWidth="2.2" fill="none" />
-    <path d="M1 14h24" stroke="#16202c" strokeWidth="2" />
+  <svg width={size} height={size} viewBox="0 0 200 200" aria-hidden="true">
+    <rect x="20" y="124" width="48" height="56" rx="10" fill="#ffffff" fillOpacity="0.3" />
+    <rect x="76" y="88" width="48" height="92" rx="10" fill="#ffffff" fillOpacity="0.6" />
+    <rect x="132" y="48" width="48" height="132" rx="10" fill="#3fb6aa" />
+    <path d="M30 100 L74 62 L104 62 L148 22" fill="none" stroke="#3fb6aa" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M124 20 L150 20 L150 46" fill="none" stroke="#3fb6aa" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );

@@ -1,6 +1,6 @@
 # Job Tracker
 
-COMP229 – Web Application Development · Project Part 1
+COMP229 – Web Application Development · Project Part 1 · **Team Next Step**
 
 A web app for tracking job applications: where each one stands (Wishlist → Applied → Interview → Offer / Rejected), when to follow up, and upcoming interviews.
 
@@ -75,7 +75,7 @@ All routes except `signup`, `signin` and `health` need the header `Authorization
 
 Import `docs/JobTracker.postman_collection.json` into Postman. Set the `baseUrl` variable (live site or `http://localhost:5001`), then run **Sign up** or **Sign in**: the token is saved automatically and used by all other requests.
 
-## Team
+## Team Next Step
 
 | Name | Student ID | Role |
 |---|---|---|
