@@ -1,0 +1,21 @@
+/* Follow-up overrides; preserve the existing application stylesheet. */
+body { color-scheme: light; }
+body.dark { color-scheme: dark; }
+
+@media (max-width: 760px) {
+  .side { flex-wrap: wrap; padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px)); }
+  .side .theme {
+    display: block;
+    margin: 2px 4px;
+    min-height: 40px;
+    text-align: center;
+  }
+  .side .nav { flex: 1 0 100%; }
+  .side .nav a { min-width: 0; padding: 8px 4px; }
+  .main { padding-bottom: calc(160px + env(safe-area-inset-bottom, 0px)); }
+  .panel { min-width: 0; overflow-x: auto; }
+  .modal { max-height: 85dvh; }
+  .foot { flex-wrap: wrap; }
+  .foot > div { flex-wrap: wrap; }
+  .co > div { min-width: 0; overflow-wrap: anywhere; }
+}
