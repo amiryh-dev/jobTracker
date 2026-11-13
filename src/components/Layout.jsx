@@ -43,7 +43,7 @@ export default function Layout() {
     <div className="app">
       <aside className="side">
         <div className="brand"><Logo />Job Tracker</div>
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <NavLink to="/" end><DashboardIcon /><span>Dashboard</span></NavLink>
           <NavLink to="/applications"><ListIcon /><span>Applications</span></NavLink>
           <NavLink to="/board"><BoardIcon /><span>Board</span></NavLink>
